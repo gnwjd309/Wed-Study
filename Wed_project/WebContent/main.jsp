@@ -40,37 +40,39 @@
    			<%
    				if(userID == null){
    		   	%>
-   		   	<ul class="nav navbar-nav navbar-right">
-    			<li class="dropdown">
-     				<a href="#" class="dropdown-toggle"
-      					data-toggle="dropdown" role="button" aria-haspopup="true"
-      					aria-expanded="false">접속하기<span class="caret"></span></a>
-     				<ul class="dropdown-menu">
-      					<li><a href="login.jsp">로그인</a></li>
-      					<li><a href="join.jsp">회원가입</a></li>
-     				</ul>
-    			</li>
-   			</ul>
+   		  		 	<ul class="nav navbar-nav navbar-right">
+    					<li class="dropdown">
+     						<a href="#" class="dropdown-toggle"
+      							data-toggle="dropdown" role="button" aria-haspopup="true"
+      							aria-expanded="false">접속하기<span class="caret"></span></a>
+     						<ul class="dropdown-menu">
+      							<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+      							<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
+     						</ul>
+    					</li>
+   					</ul>
    		   	<%
-   				} else {
+   				}
+   				
+   				else {
    			%>
-   				   		   	<ul class="nav navbar-nav navbar-right">
-    			<li class="dropdown">
-     				<a href="#" class="dropdown-toggle"
-      					data-toggle="dropdown" role="button" aria-haspopup="true"
-      					aria-expanded="false">회원 관리<span class="caret"></span></a>
-     				<ul class="dropdown-menu">
-      					<li><a href="logiutAction.jsp">로그아웃</a></li>
-     				</ul>
-    			</li>
-   			</ul>
+   					<ul class="nav navbar-nav navbar-right">
+    					<li class="dropdown">
+     						<a href="#" class="dropdown-toggle"
+      							data-toggle="dropdown" role="button" aria-haspopup="true"
+      							aria-expanded="false">회원 관리<span class="caret"></span></a>
+     						<ul class="dropdown-menu">
+      							<li><a href="logoutAction.jsp">로그아웃</a></li>
+     						</ul>
+    					</li>
+   					</ul>
    			<%
    				}
    			%>
   		</div> 
  	</nav>
  	<div class="container">
- 		<div class="jumpbotron">
+ 		<div class="jumbotron">
  			<div class="container">
  				<h1>웹 사이트 소개</h1>
  				<p> 안녕하세요. 지금 시간은 오후 7시 21분 입니다. 점심으로 빵을 먹었더니, 배가 고파서 아주 죽겠습니다. 얼른 이거 마무리 하고 집에 가서 밥 먹고 싶습니다. 살려주세요....
@@ -99,7 +101,7 @@
  			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
  				<span class="glyphicon glyphicon-chevron-left"></span>
  			</a>
- 			 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+ 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
  				<span class="glyphicon glyphicon-chevron-right"></span>
  			</a>
  		</div>

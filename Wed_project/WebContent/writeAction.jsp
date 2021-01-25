@@ -62,7 +62,6 @@
 					script.println("alert('글쓰기에 실패했습니다.')");
 					script.println("history.back()");
 					script.println("</script>");
-
 				}
 				
 				else {

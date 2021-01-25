@@ -40,9 +40,9 @@
 			PrintWriter script = response.getWriter();
 		
 			script.println("<script>");
-			script.println("<location.href = 'main.jsp'");
+			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
-		
+			
 			session.setAttribute("userID", user.getUserID());
 		}
 

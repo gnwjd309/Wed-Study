@@ -101,12 +101,12 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value="
-								<%= bbs.getBbsTitle().replaceAll(" ", "&nbps;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %>" ></td>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"
+								value="<%= bbs.getBbsTitle() %>"></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" >
-								<%= bbs.getBbsContent().replaceAll(" ", "&nbps;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;">
+								<%= bbs.getBbsContent() %></textarea></td>
 						</tr>
 					</tbody>
 				</table>	
