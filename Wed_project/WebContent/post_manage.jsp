@@ -51,8 +51,8 @@
 		<div class="collapse navbar-collapse"
 			id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li class="active"><a href="bbs.jsp">게시판</a></li>
+				<li><a href="admin.jsp">회원 관리</a></li>
+    			<li class="active"><a href="post_manage.jsp">게시판 관리</a></li>
 			</ul>
 
 			<%
@@ -107,7 +107,7 @@
 					%>
 							<tr>
 								<td><%=list.get(i).getBbsID()%></td>
-								<td><a href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle()%></a></td>
+								<td><%=list.get(i).getBbsTitle()%></td>
 								<td><%=list.get(i).getUserID()%></td>
 								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시"
 									+ list.get(i).getBbsDate().substring(14, 16) + "분"%></td>
@@ -127,23 +127,6 @@
 				if (bbsDAO.nextPage(pageNumber)) {
 			%>
 					<a href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
-			<%
-				}
-			%>	
-			<!-- 회원만 넘어가도록 -->
-			<%
-				//if logined userID라는 변수에 해당 아이디가 담기고 if not null
-				if (session.getAttribute("userID") != null) {
-			%>
-					<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-			<%
-				}
-				
-				else {
-			%>
-					<button class="btn btn-primary pull-right"
-						onclick="if(confirm('로그인 하세요'))location.href='login.jsp';"
-						type="button">글쓰기</button>
 			<%
 				}
 			%>
