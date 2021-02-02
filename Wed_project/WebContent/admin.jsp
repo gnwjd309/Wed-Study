@@ -79,7 +79,8 @@
 					<%
 						UserDAO userDAO = new UserDAO();
 						ArrayList<User> list = userDAO.getList(pageNumber);
-						for (int i = 0; i < list.size(); i++) {
+						for (int i = 0; i < list.size()-1; i++) {
+							
 					%>
 							<tr>
 								<td><%=list.get(i).getUserNo()%></td>

@@ -132,12 +132,12 @@ public class UserDAO {
 		
 	public ArrayList<User> getList(int pageNumber){
 		
-		String SQL = "SELECT * FROM USER ORDER BY userNo DESC LIMIT 10";	
+		String SQL = "SELECT * FROM USER WHERE userNo >= ? ORDER BY userNo DESC LIMIT 10";	
 		ArrayList<User> list = new ArrayList<User>();
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext() - (pageNumber) * 10);
+			pstmt.setInt(1, (getNext() - (pageNumber) * 10));
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -161,12 +161,12 @@ public class UserDAO {
 	//10 단위 페이징 처리를 위한 함수
 	public boolean nextPage (int pageNumber) {
 		
-		String SQL = "SELECT * FROM USER ORDER BY userNo DESC LIMIT 10";
+		String SQL = "SELECT * FROM USER WHERE userNo < ? ORDER BY userNo DESC LIMIT 10";
 		ArrayList<User> list = new ArrayList<User>();
 			
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext() - (pageNumber) * 10);
+			pstmt.setInt(1, (getNext() - (pageNumber) * 10));
 			rs = pstmt.executeQuery();
 				
 			if (rs.next()) {
