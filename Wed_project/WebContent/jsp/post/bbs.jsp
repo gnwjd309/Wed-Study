@@ -11,8 +11,8 @@
 <!-- 뷰포트 -->
 <meta name="viewport" content="width=device-width" initial-scale="1">
 <!-- 스타일시트 참조  -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../../css/bootstrap.css">
+<link rel="stylesheet" href="../../css/custom.css">
 <title>jsp 게시판 웹사이트</title>
 <style type="text/css">
 		a, a:hover {
@@ -51,8 +51,8 @@
 		<div class="collapse navbar-collapse"
 			id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="admin.jsp">회원 관리</a></li>
-    			<li class="active"><a href="post_manage.jsp">게시판 관리</a></li>
+				<li><a href="../main.jsp">메인</a></li>
+				<li class="active"><a href="bbs.jsp">게시판</a></li>
 			</ul>
 
 			<%
@@ -63,8 +63,8 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">접속하기<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="login.jsp">로그인</a></li>
-								<li><a href="join.jsp">회원가입</a></li>
+								<li><a href="../user/login.jsp">로그인</a></li>
+								<li><a href="../user/join.jsp">회원가입</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -76,7 +76,7 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true
 							aria-expanded="false">계정 관리<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="logoutAction.jsp">로그아웃</a></li>
+								<li><a href="../user/logoutAction.jsp">로그아웃</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -107,7 +107,7 @@
 					%>
 							<tr>
 								<td><%=list.get(i).getBbsID()%></td>
-								<td><%=list.get(i).getBbsTitle()%></td>
+								<td><a href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle()%></a></td>
 								<td><%=list.get(i).getUserID()%></td>
 								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시"
 									+ list.get(i).getBbsDate().substring(14, 16) + "분"%></td>
@@ -129,12 +129,29 @@
 					<a href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
 			<%
 				}
+			%>	
+			<!-- 회원만 넘어가도록 -->
+			<%
+				//if logined userID라는 변수에 해당 아이디가 담기고 if not null
+				if (session.getAttribute("userID") != null) {
+			%>
+					<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+			<%
+				}
+				
+				else {
+			%>
+					<button class="btn btn-primary pull-right"
+						onclick="if(confirm('로그인 하세요'))location.href='../user/login.jsp';"
+						type="button">글쓰기</button>
+			<%
+				}
 			%>
 		</div>
 	</div>
 	<!-- 애니매이션 담당 JQUERY -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!-- 부트스트랩 JS  -->
-	<script src="js/bootstrap.js"></script>
+	<script src="../../js/bootstrap.js"></script>
 </body>
 </html>

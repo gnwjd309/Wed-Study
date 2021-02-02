@@ -26,7 +26,7 @@
 			
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href = 'main.jsp'");
+			script.println("location.href = '../main.jsp'");
 			script.println("</script>");
 		}
 	
@@ -41,7 +41,7 @@
 			PrintWriter script = response.getWriter();
 			
 			script.println("<script>");
-			script.println("location.href = 'main.jsp'");
+			script.println("location.href = '../main.jsp'");
 			script.println("</script>");
 				
 			session.setAttribute("userID", user.getUserID());
@@ -54,7 +54,7 @@
 
 			script.println("<script>");
 			script.println("alert('관리자 계정입니다.')");
-			script.println("location.href = 'admin.jsp'");
+			script.println("location.href = '../admin/admin.jsp'");
 			script.println("</script>");
 				
 			session.setAttribute("userID", user.getUserID());

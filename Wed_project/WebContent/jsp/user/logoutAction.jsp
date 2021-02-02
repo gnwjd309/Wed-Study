@@ -11,7 +11,7 @@
 		session.invalidate(); // 접속한 회원의 세션을 빼앗음
 	%>
 	<script>	//메인으로 이동
-		location.href = 'main.jsp';
+		location.href = '../main.jsp';
 	</script>
 </body>
 </body>

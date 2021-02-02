@@ -9,8 +9,8 @@
 <!-- width=device-width : 반응형 웹 -->
 <meta name="viewport" content="width=device-width" initial-scale="1">
 <!-- 스타일시트 참조  -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/custom.css">
 <title>jsp 게시판 웹사이트</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
   		<div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
    			<ul class="nav navbar-nav">
     			<li class="active"><a href="main.jsp">메인</a></li>
-    			<li><a href="bbs.jsp">게시판</a></li>
+    			<li><a href="post/bbs.jsp">게시판</a></li>
    			</ul>
    			<%
    				if(userID == null){
@@ -46,8 +46,8 @@
       							data-toggle="dropdown" role="button" aria-haspopup="true"
       							aria-expanded="false">접속하기<span class="caret"></span></a>
      						<ul class="dropdown-menu">
-      							<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
-      							<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
+      							<li><a class="dropdown-item" href="user/login.jsp">로그인</a></li>
+      							<li><a class="dropdown-item" href="user/join.jsp">회원가입</a></li>
      						</ul>
     					</li>
    					</ul>
@@ -62,7 +62,7 @@
       							data-toggle="dropdown" role="button" aria-haspopup="true"
       							aria-expanded="false">계정 관리<span class="caret"></span></a>
      						<ul class="dropdown-menu">
-      							<li><a href="logoutAction.jsp">로그아웃</a></li>
+      							<li><a href="user/logoutAction.jsp">로그아웃</a></li>
      						</ul>
     					</li>
    					</ul>
@@ -89,13 +89,13 @@
  			</ol>
  			<div class="carousel-inner">
  				<div class="item active">
- 					<img src="images/1.jpg">
+ 					<img src="../images/1.jpg">
  				</div>
  				<div class="item">
- 					<img src="images/2.jpg">
+ 					<img src="../images/2.jpg">
  				</div>
  				<div class="item">
- 					<img src="images/3.jpg">
+ 					<img src="../images/3.jpg">
  				</div>
  			</div>
  			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -109,6 +109,6 @@
 	<!-- 애니매이션 담당 JQUERY -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
 	<!-- 부트스트랩 JS  -->
-	<script src="js/bootstrap.js"></script>
+	<script src="../js/bootstrap.js"></script>
 </body>
 </html>
