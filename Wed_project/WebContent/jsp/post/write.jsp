@@ -76,6 +76,7 @@
 					aria-expanded="false">계정 관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="user/logoutAction.jsp">로그아웃</a></li>
+						<li><a href="../user/mypage.jsp">마이페이지</a></li>
 					</ul></li>
 			</ul>
 			<%
@@ -103,7 +104,6 @@
 					</tbody>
 				</table>	
 				<input type="button" class="btn btn-primary pull-left" onClick="location='bbs.jsp'" value="이전"/>
-
 				<input type="submit" class="btn btn-primary pull-right" value="글쓰기" />
 			</form>
 		</div>

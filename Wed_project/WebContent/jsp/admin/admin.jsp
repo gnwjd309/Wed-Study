@@ -60,8 +60,22 @@
   		</div> 
  	</nav>
  	<!-- 회원 관리 -->
-	<div class="container">
+ 	<div class="container">
 		<div class="row">
+			<button type="button" class="btn btn-primary pull-left" id=pick>선택</button>
+			
+			<!-- 선택 버튼을 누르면 전체 선택 버튼이 나타나는 이벤트 -->
+			<script>
+				$(function(){
+					$("#pick").click(function(){
+						$(".container").append('<button type="button" class="btn btn-primary pull-left" id="pick_all">전체 선택</button>')
+					})
+					$("#pick_all").click(function(){
+						alert("click");
+					})
+				})
+			</script>>
+			
 			<!-- 게시글의 홀수번째, 짝수번째 색을 다르게 함 -->
 			<table class="table table-striped"
 				style="text-align: center; border: 1px solid #dddddd">
@@ -80,7 +94,6 @@
 						UserDAO userDAO = new UserDAO();
 						ArrayList<User> list = userDAO.getList(pageNumber);
 						for (int i = 0; i < list.size()-1; i++) {
-							
 					%>
 							<tr>
 								<td><%=list.get(i).getUserNo()%></td>
