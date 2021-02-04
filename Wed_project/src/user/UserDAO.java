@@ -14,7 +14,7 @@ public class UserDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/WED_PROJECT?&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String dbID = "root";
-			String dbPassword = "Rlanwjd67!";
+			String dbPassword = "비밀번호";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
